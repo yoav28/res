@@ -5,7 +5,18 @@
     width: 100%;
     height: 100%;
     z-index: 200;
+    animation: show 0.4s;
 }
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .container {
     position: absolute;
@@ -15,20 +26,15 @@
     height: 100%;
     background: wheat;
     box-shadow: black 0 0 3px;
+    word-break: break-word;
+    direction: rtl;
 }
 
-.top {
+.q-top {
     position: relative;
     height: 35vh;
     width: 100%;
     background: white;
-}
-
-.middle {
-    position: relative;
-    height: 8vh;
-    width: 100%;
-    background: lightgrey;
 }
 
 .title {
@@ -45,9 +51,41 @@
     top: 15%;
 }
 
+.description {
+    padding: 15px;
+    position: relative;
+    width: 100%;
+    background: lightgrey;
+}
+
+.q-details {
+    position: relative;
+    width: 100%;
+    background: white;
+    height: 7vh;
+    padding: 15px;
+    box-shadow: 1px 3px 2px -1px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.time {
+    padding-top: 15px;
+}
+
+
 .answers {
     position: relative;
     width: 100%;
     background: gainsboro;
     height: 100%;
+    padding: 25px;
+}
+
+.answers-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 2vh;
+    overflow-y: scroll;
+    background: white;
 }

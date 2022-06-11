@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Question from "./Question/question";
 import Box from "./Box/Box";
+import Topbar from "./Topbar/Topbar";
 import * as firebase from './firebase';
 import './App.css';
 
@@ -44,14 +45,15 @@ export default function App() {
 
         const [title, description, user, time] = args
 
-        setCurrentQuestion(<Question setShow={setShow} title={title} user={user}/>)
+        setCurrentQuestion(<Question description={description.repeat(20)} setShow={setShow} title={title} time={time} user={user}/>)
         setShow(true)
 
     }
 
 
     return (
-        <div style={{background: 'black', position: 'absolute', width: '100%', height: '100%'}} className="App">
+        <div className="Home">
+            <Topbar/>
             {show && currentQuestion}
             <div className={'all-questions'}>
                 {questions}

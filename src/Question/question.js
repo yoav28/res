@@ -37,18 +37,25 @@ export default function Question(props) {
             <div className={'layer'} id={'layer'} onClick={onClose}>
                 <div className={'container'} onClick={() => lastClick = Date.now()}>
 
-                    <div className={'top'}>
+                    <div className={'q-top'}>
                         <h2 className={'title'}>
                             {props.title}
                         </h2>
                     </div>
 
-                    <div className={'middle'}>
-                        <p className={'user'}>{props.user}</p>
-                    </div>
+                    <p className={'description'}>{props.description}</p>
 
+                    <div className={'q-details'}>
+                        <p className={'user'}>{props.user}</p>
+                        <p className={'time'}>{props.time}</p>
+                    </div>
                     <div className={'answers'}>
-                        {answers}
+                        <p className={'number-of-answers'}>{answers.length}</p>
+
+                        <div className={'answers-container'}>
+                            {answers}
+
+                        </div>
                     </div>
                 </div>
             </div>
